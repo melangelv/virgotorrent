@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirgoTorrent", "VirgoTorrent\VirgoTorrent.csproj", "{EA32E487-F1E1-420E-8491-7926ED3E8461}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Virgo", "Virgo\Virgo.csproj", "{E694B21F-9DAA-4677-B3C3-907989BE99C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirgoUnitTest", "VirgoUnitTest\VirgoUnitTest.csproj", "{E57E837F-42FF-4027-999D-2FEFBB76C211}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EA32E487-F1E1-420E-8491-7926ED3E8461}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA32E487-F1E1-420E-8491-7926ED3E8461}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA32E487-F1E1-420E-8491-7926ED3E8461}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA32E487-F1E1-420E-8491-7926ED3E8461}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E694B21F-9DAA-4677-B3C3-907989BE99C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E694B21F-9DAA-4677-B3C3-907989BE99C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E694B21F-9DAA-4677-B3C3-907989BE99C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E694B21F-9DAA-4677-B3C3-907989BE99C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E57E837F-42FF-4027-999D-2FEFBB76C211}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E57E837F-42FF-4027-999D-2FEFBB76C211}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E57E837F-42FF-4027-999D-2FEFBB76C211}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E57E837F-42FF-4027-999D-2FEFBB76C211}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
