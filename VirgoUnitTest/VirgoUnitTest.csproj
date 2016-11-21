@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="BCoderTest_DecodeInteger.cs" />
     <Compile Include="BCoderTest_EncodeInteger.cs" />
+    <Compile Include="BCoderTest_EncodeString.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BCoderTest_DecodeString.cs" />
   </ItemGroup>

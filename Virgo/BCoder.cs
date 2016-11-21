@@ -72,5 +72,19 @@ namespace Virgo
 
             return decodedString;
         }
+
+        public static string EncodeString(string content)
+        {
+            // Check string.
+            if (String.IsNullOrWhiteSpace(content))
+                throw new ArgumentException("content can not be empty.");
+
+            StringBuilder builder = new StringBuilder();
+            builder.Append(Convert.ToString(content.Length));
+            builder.Append(":");
+            builder.Append(content);
+
+            return builder.ToString();
+        }
     }
 }
