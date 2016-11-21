@@ -86,5 +86,79 @@ namespace Virgo
 
             return builder.ToString();
         }
+
+        private static string GoToUntil(string source, string which)
+        {
+            StringBuilder builder = new StringBuilder();
+            foreach(char c in source)
+            {
+                if (c == which[0])
+                {
+                    builder.Append(c);
+                    return builder.ToString();
+                }
+                else
+                {
+                    builder.Append(c);
+                }
+            }
+            return builder.ToString();
+        }
+
+        public static List<object> DecodeList(string list)
+        {
+            // Check string.
+            if (String.IsNullOrWhiteSpace(list))
+                throw new ArgumentException("list can not be empty.");
+            // Check first letter.
+            if (list[0] != "l"[0])
+                throw new ArgumentException("it does not start a list.");
+            // Check last letter.
+            if (list[list.Length - 1] != "e"[0])
+                throw new ArgumentException("it does not end a list.");
+
+            List<object> data = new List<object>();
+
+            // Scan all the characters.
+            int pointer = 1;
+            while (pointer < list.Length)
+            {
+                string current = Convert.ToString(list[pointer]);
+                string temp = "";
+                switch (current)
+                {
+                    case "i":
+                        // integer.
+                        temp = GoToUntil(list.Substring(pointer), "e");
+                        data.Add(DecodeInteger(temp));
+                        pointer += temp.Length;
+                        break;
+                    case "l":
+                        // nested list.
+                        data.Add(DecodeList(list.Substring(pointer)));
+                        break;
+                    case "1":
+                    case "2":
+                    case "3":
+                    case "4":
+                    case "5":
+                    case "6":
+                    case "7":
+                    case "8":
+                    case "9":
+                    case "0":
+                        // string.
+                        string length = GoToUntil(list.Substring(pointer), ":");
+                        string self = DecodeString(list.Substring(pointer));
+                        data.Add(self);
+                        pointer += length.Length + self.Length;
+                        break;
+                    case "e":
+                        // end of object.
+                        return data;
+                }
+                return data;
+            }
+        }
     }
 }
