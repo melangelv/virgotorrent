@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -135,7 +136,7 @@ namespace Virgo
                         break;
                     case "l":
                         // nested list.
-                        data.Add(DecodeList(list.Substring(pointer)));
+                        data.Add(DecodeList(list.Substring(pointer++)));
                         break;
                     case "1":
                     case "2":
@@ -157,8 +158,8 @@ namespace Virgo
                         // end of object.
                         return data;
                 }
-                return data;
             }
+            return data;
         }
     }
 }
