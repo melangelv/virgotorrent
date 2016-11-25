@@ -136,7 +136,8 @@ namespace Virgo
                         break;
                     case "l":
                         // nested list.
-                        data.Add(DecodeList(list.Substring(pointer++)));
+                        data.Add(DecodeList(list.Substring(pointer)));
+                        pointer += 1;
                         break;
                     case "1":
                     case "2":
@@ -160,6 +161,23 @@ namespace Virgo
                 }
             }
             return data;
+        }
+        public static string EncodeList(List<object> i)
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append("l");
+
+            string t = "";
+            foreach(object o in i)
+            {
+                if (o is int) t = EncodeInteger((int)o);
+                else if (o is string) t = EncodeString((string)o);
+                else if (o is List<object>) t = EncodeList((List<object>)o);
+
+                builder.Append(t);
+            }
+            builder.Append("e");
+            return builder.ToString();
         }
     }
 }
